@@ -2,6 +2,26 @@
 # Path: StudyGlanceLabs\1-numdatatypes.py
 #JoeProIT 5/31/2023
 
+# A function that incorporates all the above data types
+def numdatatypes():
+    print("Integer: ", 10)
+    print("Float: ", 10.5)
+    print("Complex: ", 1 + 3j)
+    print("Boolean: ", True)
+    print("Long: ", 1234567890987654321)
+    print("Fraction: ", 1 / 2)
+    print("Decimal: ", 0.000)
+numdatatypes()
+
+# Output:
+# Integer:  10
+# Float:  10.5
+# Complex:  (1+3j)
+# Boolean:  True
+# Long:  1234567890987654321
+# Fraction:  0.5
+# Decimal:  0.0
+
 # 1.Integer (int): Represents whole numbers without any decimal point, such as 0, 1, -5, 100.
 # 2.Float (float): Represents decimal numbers with a fractional part, such as 3.14, -0.5, 2.0.
 # 3.Complex (complex): Represents numbers with a real and imaginary part, such as 2+3j, -1+2j.
@@ -40,25 +60,7 @@
 # A decimal number is a number with a decimal point. It is used to represent real numbers with arbitrary precision.
 # For example, 0.5, 3.14, 0.0001, 0.00000000000
 
-# A function that incorporates all the above data types
-def numdatatypes():
-    print("Integer: ", 10)
-    print("Float: ", 10.5)
-    print("Complex: ", 1 + 3j)
-    print("Boolean: ", True)
-    print("Long: ", 1234567890987654321)
-    print("Fraction: ", 1 / 2)
-    print("Decimal: ", 0.000)
-numdatatypes()
 
-# Output:
-# Integer:  10
-# Float:  10.5
-# Complex:  (1+3j)
-# Boolean:  True
-# Long:  1234567890987654321
-# Fraction:  0.5
-# Decimal:  0.0
 
 
 
