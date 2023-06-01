@@ -27,4 +27,4 @@ This repository contains a collection of beginner-level Python lab programs base
 
 Scripts by JoeProIT
 Original Source Labs: [https://studyglance.in/labprograms/pythonlabprograms.php](https://studyglance.in/labprograms/pythonlabprograms.php)
-
+Used without permission.
