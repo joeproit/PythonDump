@@ -5,8 +5,9 @@ Scenario: right after a firewall rule change, VLAN move, switch swap or NIC
           swap, confirm from this box that the services you need answer and
           the ones that must stay blocked still do. One command, pass/fail per
           line, exit code for scripting.
-Origin:   WDSE IT, network and phone-system migration checks, 2026.
-Written:  2026-11-21
+Origin:   WDSE IT, network and phone-system migration checks, April 2026 at
+          the latest.
+Written:  2026-11-21, from that work
 
 Targets are host:port on the command line or one per line in --file
 ("#" comments allowed, optional label after the target). Prefix with ! when the

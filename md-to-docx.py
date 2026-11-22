@@ -5,7 +5,7 @@ Scenario: keep SOPs, runbooks and policies as markdown in git, then regenerate
           the Word versions in bulk, e.g. when a whole document set is re-issued
           after an owner, header or date change.
 Origin:   WDSE IT policy/SOP and governance doc set, April 2026.
-Written:  2026-11-21
+Written:  2026-11-21, from that work
 
 Handles headings, paragraphs, bullet and numbered lists (two levels), fenced
 code blocks, block quotes, pipe tables, horizontal rules, and inline

@@ -7,7 +7,8 @@ Scenario: on CentOS-family boxes (PBXact/FreePBX, Sangoma) rules added with
           swap the unsaved rules vanish and nobody notices. Run this before any
           reboot, or from cron to catch drift.
 Origin:   WDSE IT, PBXact hardening with fail2ban plus custom iptables
-          (PBX firewall module disabled), 2026. Written 2026-11-21.
+          (PBX firewall module disabled), April 2026 at the latest. The
+          script itself was written 2026-11-21 from that work.
 
 Counters and comments are ignored. Lines matching fail2ban chains (f2b-) are
 ignored by default because bans change constantly. Exit 0 = in sync, 1 = drift,

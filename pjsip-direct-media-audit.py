@@ -7,8 +7,9 @@ Scenario: one-way or no audio when phones and the SIP provider cannot reach each
           setting is affected too. This lists every endpoint whose effective
           direct_media is yes and prints the override stanza to drop into
           pjsip.endpoint_custom_post.conf.
-Origin:   WDSE IT, PBXact phone system, VLAN/firewall migration, 2026.
-Written:  2026-11-21
+Origin:   WDSE IT, PBXact phone system, VLAN/firewall migration, April 2026
+          at the latest.
+Written:  2026-11-21, from that work
 
 Config files are applied in the order given; later files override earlier ones,
 and templates ("[ext](tmpl)") are resolved. FreePBX load order is roughly:
