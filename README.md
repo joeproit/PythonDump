@@ -3,9 +3,8 @@
 
 Newer scripts below. Each file's docstring has the full usage, the scenario it
 was written for, and where it came from. The single-file scripts have exit codes
-you can script against (0 ok, 1 finding or change, 2 bad input). Only
-`md-to-docx.py` needs a third-party package (`python-docx`); `smoke-qa/` is a
-small multi-file pipeline and needs Playwright.
+you can script against (0 ok, 1 finding or change, 2 bad input). `md-to-docx.py` needs `python-docx`; `smoke-qa/` needs Playwright,
+and `clawlib-inventory.py` invokes the Git command-line tool.
 
 Older, unchanged: `crawler.py`, `dice-roller.py`, `job-search.py`, `StudyGlanceLabsClone/`.
 
@@ -28,13 +27,33 @@ Older, unchanged: `crawler.py`, `dice-roller.py`, `job-search.py`, `StudyGlanceL
 | `smoke-qa/` | Before shipping a web app: crawl every internal page, fill and submit every form with valid and hostile input, collect console and network errors and screenshots, merge it into one report, then optionally have an LLM triage the findings into a task list and feed it to OpenCode in a fix, re-test, repeat loop. See `smoke-qa/README.md`. | Cyguin "opencode-smoke-qa" pipeline, March 2026 | playwright; optional openai |
 | `der-dump.py` | Inspect CMS/PKCS#7 and X.509 structures and see exactly which attribute, length or INTEGER encoding a verifier is choking on. Flags non-minimal lengths and INTEGERs, bad BOOLEANs and BER indefinite lengths. | Cyguin adversarial conformance research: PSCertPatterns (May 2026), PSCMSPatterns (June 2026) | stdlib |
 
+## Additional reconstructed utilities (prepared November 2026)
+
+These scripts implement problems discussed previously; they are **reconstructions**, not recovered original source files. The month and year below refer to the discussion, not the Git commit date.
+
+| Script | Scenario for use | Origin | Deps |
+|---|---|---|---|
+| `indeed-csv-analyzer.py` | Deduplicate an exported job-listing CSV by job key or URL, normalize company/title/salary/rating fields, and rank listings by rating and minimum salary. Does not scrape job boards. | Job-search data analysis discussion, April 2023; reconstructed November 2026 | stdlib |
+| `mtg-deck-simulator.py` | Compare exact hypergeometric and Monte Carlo probabilities of drawing a chosen number of lands in an opening hand. Configurable deck size, hand size, land count, and random seed. | MTG deck probability discussion, February 2025; reconstructed November 2026 | stdlib |
+| `clawlib-inventory.py` | Scan a local directory for Git repositories and export their paths, branches, remotes, and commit IDs to JSON; optionally flag dirty working trees. Read-only; does not pull or update repositories. | ClawLib repository-inventory discussion, February 2026; reconstructed November 2026 | stdlib + Git CLI |
+
+Example commands:
+
+```bash
+python indeed-csv-analyzer.py jobs.csv -o ranked.csv --min-rating 4.0
+python mtg-deck-simulator.py --deck 60 --lands 24 --hand 7 --trials 100000
+python clawlib-inventory.py ~/clawlib -o sources.json --include-dirty
+```
+
+The three additions were syntax-checked but have not been end-to-end tested against real input datasets. They use exit code 0 for success and 2 for invalid input; the general exit-code convention above describes other utilities that may also return 1 for findings or changes.
+
 ## Notes
 
 - No internal addresses, hostnames or credentials appear in any script; the
   examples use documentation ranges and placeholder names.
 - Files use hyphenated names to match the older scripts in this repo.
-- The single-file scripts were written 2026-11-21 as clean, generalized
-  versions of earlier work. The origin dates above are when that work happened,
+- The original batch of newer single-file scripts was written 2026-11-21 as clean, generalized
+  versions of earlier work. The three additional reconstructed utilities were prepared in November 2026. The origin dates above are when that work happened,
   not commit dates. The WDSE items are from April 2026 at the latest.
 - `smoke-qa/` is different: it was recovered on 2026-11-21 from the March 2026
   build record, not rewritten. Two small fixes were made during recovery and are
